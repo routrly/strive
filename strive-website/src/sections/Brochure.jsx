@@ -1,0 +1,90 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiCheckCircle } from 'react-icons/fi'
+import SectionHeading from '../components/SectionHeading'
+import PlaceholderMedia from '../components/PlaceholderMedia'
+import Button from '../components/Button'
+import { isValidEmail } from '../utils/validation'
+
+export default function Brochure() {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (!isValidEmail(email)) {
+      setError('Please enter a valid email address.')
+      return
+    }
+    setError('')
+
+    // TODO: wire real submit endpoint here — currently client-side only.
+
+    setSubmitted(true)
+  }
+
+  return (
+    <section id="brochure" className="py-20 px-6">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <PlaceholderMedia label="Brochure cover thumbnail" aspect="4/5" className="rounded-card max-w-xs mx-auto" />
+
+        <div>
+          <SectionHeading
+            align="left"
+            eyebrow="Brochure"
+            title="Download Our Brochure"
+            subtitle="Enter your email address to receive our brochure instantly."
+          />
+
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex items-center gap-3 text-primary font-semibold bg-surface rounded-card p-6"
+              >
+                <FiCheckCircle className="text-3xl shrink-0" />
+                <span>Thanks! Your brochure request has been received.</span>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                onSubmit={handleSubmit}
+                noValidate
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <div className="flex-1">
+                  <label htmlFor="brochure-email" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="brochure-email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full px-5 py-3 rounded-full border border-text/20 focus:outline-none focus:ring-2 focus:ring-primary"
+                    aria-invalid={Boolean(error)}
+                    aria-describedby={error ? 'brochure-email-error' : undefined}
+                  />
+                  {error && (
+                    <p id="brochure-email-error" className="text-red-600 text-sm mt-2 ml-2">
+                      {error}
+                    </p>
+                  )}
+                </div>
+                <Button as="button" type="submit" variant="primary">
+                  Get Brochure
+                </Button>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  )
+}
