@@ -1,10 +1,11 @@
 import PlaceholderMedia from '../components/PlaceholderMedia'
 import SectionHeading from '../components/SectionHeading'
+import AnimatedSection from '../components/AnimatedSection'
 
 export default function About() {
   return (
     <section id="about" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+      <AnimatedSection as="div" className="max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="About STRIVE"
           title="Building Trusted Trainers. Creating Real Opportunities."
@@ -40,7 +41,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

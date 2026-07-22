@@ -1,6 +1,7 @@
 import { FiChevronDown } from 'react-icons/fi'
 import PlaceholderMedia from '../components/PlaceholderMedia'
 import Button from '../components/Button'
+import AnimatedSection from '../components/AnimatedSection'
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-primary/70" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <AnimatedSection as="div" className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
           Building Trusted Trainers. Creating Real Opportunities.
         </h1>
@@ -26,7 +27,7 @@ export default function Hero() {
             Contact Us
           </Button>
         </div>
-      </div>
+      </AnimatedSection>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce">
         <FiChevronDown className="text-3xl" aria-hidden="true" />

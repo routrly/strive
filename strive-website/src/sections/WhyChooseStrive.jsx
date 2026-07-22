@@ -1,6 +1,7 @@
 import { FiShield, FiCheckCircle, FiRefreshCw, FiUsers, FiAward, FiTrendingUp } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
 import IconCard from '../components/IconCard'
+import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
 
 const REASONS = [
   { icon: FiShield, title: 'Protection First', description: 'Protection from fraudulent vendors.' },
@@ -14,14 +15,16 @@ const REASONS = [
 export default function WhyChooseStrive() {
   return (
     <section className="py-20 px-6 bg-surface">
-      <div className="max-w-6xl mx-auto">
+      <AnimatedSection as="div" staggerChildren className="max-w-6xl mx-auto">
         <SectionHeading eyebrow="Why STRIVE" title="Why Choose STRIVE" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {REASONS.map((reason) => (
-            <IconCard key={reason.title} {...reason} />
+            <AnimatedItem key={reason.title} as="div">
+              <IconCard {...reason} />
+            </AnimatedItem>
           ))}
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

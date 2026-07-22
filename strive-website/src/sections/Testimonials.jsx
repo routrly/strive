@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import SectionHeading from '../components/SectionHeading'
 import PlaceholderMedia from '../components/PlaceholderMedia'
+import AnimatedSection from '../components/AnimatedSection'
 
 const TESTIMONIALS = [
   {
@@ -21,7 +22,7 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <section className="py-20 px-6 bg-surface">
-      <div className="max-w-4xl mx-auto">
+      <AnimatedSection as="div" className="max-w-4xl mx-auto">
         <SectionHeading eyebrow="Testimonials" title="What People Say" />
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -44,7 +45,7 @@ export default function Testimonials() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

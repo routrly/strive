@@ -1,6 +1,7 @@
 import { FiTool, FiUsers, FiGlobe, FiTarget } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
 import IconCard from '../components/IconCard'
+import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
 
 const ITEMS = [
   { icon: FiTool, title: 'Practical Learning', description: 'Hands-on, applied training methods.' },
@@ -12,14 +13,16 @@ const ITEMS = [
 export default function OurApproach() {
   return (
     <section className="py-20 px-6 bg-surface">
-      <div className="max-w-6xl mx-auto">
+      <AnimatedSection as="div" staggerChildren className="max-w-6xl mx-auto">
         <SectionHeading eyebrow="Methodology" title="Our Approach" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {ITEMS.map((item) => (
-            <IconCard key={item.title} {...item} />
+            <AnimatedItem key={item.title} as="div">
+              <IconCard {...item} />
+            </AnimatedItem>
           ))}
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

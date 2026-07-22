@@ -4,6 +4,7 @@ import { FiCheckCircle } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
 import PlaceholderMedia from '../components/PlaceholderMedia'
 import Button from '../components/Button'
+import AnimatedSection from '../components/AnimatedSection'
 import { isValidEmail } from '../utils/validation'
 
 export default function Brochure() {
@@ -26,7 +27,7 @@ export default function Brochure() {
 
   return (
     <section id="brochure" className="py-20 px-6">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <AnimatedSection as="div" className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <PlaceholderMedia label="Brochure cover thumbnail" aspect="4/5" className="rounded-card max-w-xs mx-auto" />
 
         <div>
@@ -84,7 +85,7 @@ export default function Brochure() {
             )}
           </AnimatePresence>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

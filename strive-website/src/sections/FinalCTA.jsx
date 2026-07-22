@@ -1,9 +1,10 @@
 import Button from '../components/Button'
+import AnimatedSection from '../components/AnimatedSection'
 
 export default function FinalCTA() {
   return (
     <section className="py-20 px-6 bg-primary text-white text-center">
-      <div className="max-w-2xl mx-auto">
+      <AnimatedSection as="div" className="max-w-2xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Be a Part of STRIVE</h2>
         <p className="text-white/85 mb-8">
           If you're serious about building a career in training and becoming part of a trusted
@@ -18,7 +19,7 @@ export default function FinalCTA() {
           </Button>
         </div>
         <p className="text-white/60 text-sm">Limited onboarding to maintain quality standards.</p>
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

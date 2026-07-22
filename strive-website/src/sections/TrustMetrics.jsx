@@ -1,4 +1,5 @@
 import AnimatedCounter from '../components/AnimatedCounter'
+import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
 
 const METRICS = [
   { value: 500, suffix: '+', label: 'Professional Trainers' },
@@ -10,11 +11,13 @@ const METRICS = [
 export default function TrustMetrics() {
   return (
     <section className="py-16 bg-surface">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <AnimatedSection as="div" staggerChildren className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {METRICS.map((metric) => (
-          <AnimatedCounter key={metric.label} {...metric} />
+          <AnimatedItem key={metric.label} as="div">
+            <AnimatedCounter {...metric} />
+          </AnimatedItem>
         ))}
-      </div>
+      </AnimatedSection>
     </section>
   )
 }
