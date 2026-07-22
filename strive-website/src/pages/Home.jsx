@@ -6,6 +6,9 @@ import WhatWeDo from '../sections/WhatWeDo'
 import OurApproach from '../sections/OurApproach'
 import MembershipBenefits from '../sections/MembershipBenefits'
 import MembershipProcess from '../sections/MembershipProcess'
+import BusinessGrowth from '../sections/BusinessGrowth'
+import Testimonials from '../sections/Testimonials'
+import Brochure from '../sections/Brochure'
 
 export default function Home() {
   return (
@@ -18,6 +21,9 @@ export default function Home() {
       <OurApproach />
       <MembershipBenefits />
       <MembershipProcess />
+      <BusinessGrowth />
+      <Testimonials />
+      <Brochure />
     </>
   )
 }
