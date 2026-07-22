@@ -1,3 +1,6 @@
+// When replacing with a real <img>, always set loading="lazy" (except the
+// Hero video/image, which is above the fold and should load eagerly) and
+// keep the `label` text as the `alt` attribute.
 export default function PlaceholderMedia({ label, aspect = '16/9', className = '' }) {
   return (
     <div
