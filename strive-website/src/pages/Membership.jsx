@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import SectionHeading from '../components/SectionHeading'
 import MembershipCard from '../components/MembershipCard'
 
@@ -21,19 +22,26 @@ const TRACKS = [
 
 export default function Membership() {
   return (
-    <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-primary/10 to-transparent min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeading
-          eyebrow="Join STRIVE"
-          title="Choose Your Training Track"
-          subtitle="Select the trainer category that matches your expertise and apply directly."
-        />
-        <div className="grid md:grid-cols-3 gap-8">
-          {TRACKS.map((track) => (
-            <MembershipCard key={track.title} {...track} />
-          ))}
+    <>
+      <Seo
+        title="Membership — Apply as a Trainer"
+        description="Apply to become a certified Soft Skills, Aptitude Skills, or Verbal Skills Trainer in the STRIVE professional network."
+        path="/membership"
+      />
+      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-primary/10 to-transparent min-h-screen">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            eyebrow="Join STRIVE"
+            title="Choose Your Training Track"
+            subtitle="Select the trainer category that matches your expertise and apply directly."
+          />
+          <div className="grid md:grid-cols-3 gap-8">
+            {TRACKS.map((track) => (
+              <MembershipCard key={track.title} {...track} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

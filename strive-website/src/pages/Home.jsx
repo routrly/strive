@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import Hero from '../sections/Hero'
 import TrustMetrics from '../sections/TrustMetrics'
 import About from '../sections/About'
@@ -14,6 +15,11 @@ import FinalCTA from '../sections/FinalCTA'
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Building Trusted Trainers, Creating Real Opportunities"
+        description="STRIVE empowers trainers through verified opportunities, professional development, and a trusted training ecosystem connecting educators with institutions and organizations."
+        path="/"
+      />
       <Hero />
       <TrustMetrics />
       <About />
