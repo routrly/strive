@@ -1,16 +1,44 @@
-# React + Vite
+# STRIVE Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Marketing website for STRIVE (Society for Training Resources and Instructional
+Value Enhancement) — a community connecting trainers with institutions and
+organizations.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 18 + Vite, Tailwind CSS v3, framer-motion, react-router-dom v6,
+react-helmet-async, react-intersection-observer, swiper.
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev      # dev server
+npm run test     # Vitest unit tests
+npm run build    # production build
+npm run preview  # preview the production build
+```
 
-## Expanding the Oxlint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+src/
+  assets/       # placeholder-manifest.md + future real media
+  components/   # reusable primitives (Button, Card, Navbar, Footer, ...)
+  sections/     # page-specific composites (Hero, About, Testimonials, ...)
+  pages/        # route-level pages (Home, Membership, Contact, Privacy, Terms)
+  hooks/        # useScrollPosition, useCountUp
+  utils/        # validation helpers
+  layouts/      # RootLayout (Navbar + Outlet + Footer)
+```
+
+## Known TODOs
+
+- Real media assets (hero video, avatars, photos) — currently placeholder
+  blocks in `src/assets/placeholder-manifest.md`, awaiting real files.
+- Brochure and Contact form submissions are client-side validation only
+  (`// TODO: wire real submit endpoint here`).
+- Facebook/Instagram/LinkedIn links are stubbed (`href="#"`) pending real
+  profile URLs.
+- `src/components/Seo.jsx`'s `BASE_URL` is a placeholder pending the real
+  production domain.
