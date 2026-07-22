@@ -9,6 +9,7 @@ import MembershipProcess from '../sections/MembershipProcess'
 import BusinessGrowth from '../sections/BusinessGrowth'
 import Testimonials from '../sections/Testimonials'
 import Brochure from '../sections/Brochure'
+import FinalCTA from '../sections/FinalCTA'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <BusinessGrowth />
       <Testimonials />
       <Brochure />
+      <FinalCTA />
     </>
   )
 }
