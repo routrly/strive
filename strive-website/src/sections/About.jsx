@@ -1,6 +1,6 @@
-import PlaceholderMedia from '../components/PlaceholderMedia'
 import SectionHeading from '../components/SectionHeading'
 import AnimatedSection from '../components/AnimatedSection'
+import aboutDemo from '../assets/demo/about.jpg'
 
 export default function About() {
   return (
@@ -12,7 +12,13 @@ export default function About() {
         />
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <PlaceholderMedia label="About STRIVE team/office photo" aspect="4/3" className="rounded-card" />
+          {/* Demo image — swap for a real team/office photo per src/assets/placeholder-manifest.md */}
+          <img
+            src={aboutDemo}
+            alt="STRIVE team and office"
+            loading="lazy"
+            className="rounded-card w-full aspect-[4/3] object-cover"
+          />
 
           <div className="space-y-6">
             <div>

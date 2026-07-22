@@ -1,8 +1,8 @@
 import { FiArrowRight } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
 import Card from '../components/Card'
-import PlaceholderMedia from '../components/PlaceholderMedia'
 import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
+import businessGrowthDemo from '../assets/demo/business-growth.jpg'
 
 const CARDS = [
   { title: 'Verified Clients', description: 'Institutions and organizations are verified before engagement.' },
@@ -29,7 +29,13 @@ export default function BusinessGrowth() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <PlaceholderMedia label="Business Growth illustrative photo" aspect="4/3" className="rounded-card" />
+          {/* Demo image — swap for a real institution/corporate training photo per src/assets/placeholder-manifest.md */}
+          <img
+            src={businessGrowthDemo}
+            alt="Institution and corporate training session"
+            loading="lazy"
+            className="rounded-card w-full aspect-[4/3] object-cover"
+          />
           <div className="grid sm:grid-cols-2 gap-6">
             {CARDS.map((card) => (
               <AnimatedItem key={card.title} as="div">

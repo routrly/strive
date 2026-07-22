@@ -1,21 +1,26 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import SectionHeading from '../components/SectionHeading'
-import PlaceholderMedia from '../components/PlaceholderMedia'
 import AnimatedSection from '../components/AnimatedSection'
+import trainerAvatar from '../assets/demo/testimonial-trainer.jpg'
+import collegePartnerAvatar from '../assets/demo/testimonial-college-partner.jpg'
+import corporateClientAvatar from '../assets/demo/testimonial-corporate-client.jpg'
 
 const TESTIMONIALS = [
   {
     quote: 'STRIVE helped me find consistent training opportunities without worrying about fake clients.',
     role: 'Trainer',
+    avatar: trainerAvatar,
   },
   {
     quote: 'Their training sessions were engaging, structured and impactful.',
     role: 'College Partner',
+    avatar: collegePartnerAvatar,
   },
   {
     quote: 'Professional, committed and result-oriented.',
     role: 'Corporate Client',
+    avatar: corporateClientAvatar,
   },
 ]
 
@@ -34,10 +39,12 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <SwiperSlide key={t.role}>
               <div className="flex flex-col items-center text-center gap-4 px-4">
-                <PlaceholderMedia
-                  label={`${t.role} avatar`}
-                  aspect="1/1"
-                  className="w-24 h-24 rounded-full"
+                {/* Demo image — swap for a real headshot per src/assets/placeholder-manifest.md */}
+                <img
+                  src={t.avatar}
+                  alt={`${t.role} avatar`}
+                  loading="lazy"
+                  className="w-24 h-24 rounded-full object-cover"
                 />
                 <p className="text-lg text-text/80 max-w-xl">&ldquo;{t.quote}&rdquo;</p>
                 <span className="font-semibold text-primary">— {t.role}</span>

@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiCheckCircle } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
-import PlaceholderMedia from '../components/PlaceholderMedia'
 import Button from '../components/Button'
 import AnimatedSection from '../components/AnimatedSection'
 import { isValidEmail } from '../utils/validation'
+import brochureCoverDemo from '../assets/demo/brochure-cover.jpg'
 
 export default function Brochure() {
   const [email, setEmail] = useState('')
@@ -28,7 +28,13 @@ export default function Brochure() {
   return (
     <section id="brochure" className="py-20 px-6">
       <AnimatedSection as="div" className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <PlaceholderMedia label="Brochure cover thumbnail" aspect="4/5" className="rounded-card max-w-xs mx-auto" />
+        {/* Demo image — swap for the real brochure cover per src/assets/placeholder-manifest.md */}
+        <img
+          src={brochureCoverDemo}
+          alt="STRIVE brochure cover"
+          loading="lazy"
+          className="rounded-card max-w-xs mx-auto w-full aspect-[4/5] object-cover"
+        />
 
         <div>
           <SectionHeading

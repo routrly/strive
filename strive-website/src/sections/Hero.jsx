@@ -1,13 +1,14 @@
 import { FiChevronDown } from 'react-icons/fi'
-import PlaceholderMedia from '../components/PlaceholderMedia'
 import Button from '../components/Button'
 import AnimatedSection from '../components/AnimatedSection'
+import heroDemo from '../assets/demo/hero.jpg'
 
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center">
       <div className="absolute inset-0">
-        <PlaceholderMedia label="Hero background video" aspect="16/9" className="w-full h-full" />
+        {/* Demo image — swap for the real hero video per src/assets/placeholder-manifest.md */}
+        <img src={heroDemo} alt="" className="w-full h-full object-cover" loading="eager" />
         <div className="absolute inset-0 bg-primary/70" />
       </div>
 
