@@ -1,3 +1,13 @@
+import Hero from '../sections/Hero'
+import TrustMetrics from '../sections/TrustMetrics'
+import About from '../sections/About'
+
 export default function Home() {
-  return <div className="pt-24 px-6">Home page — sections added in later tasks.</div>
+  return (
+    <>
+      <Hero />
+      <TrustMetrics />
+      <About />
+    </>
+  )
 }
