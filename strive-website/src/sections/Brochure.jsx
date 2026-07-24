@@ -52,10 +52,20 @@ export default function Brochure() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center gap-3 text-primary font-semibold bg-surface rounded-card p-6"
+                  className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-primary font-semibold bg-surface rounded-card p-6"
                 >
                   <FiCheckCircle className="text-3xl shrink-0" />
-                  <span>Thanks! Your brochure request has been received.</span>
+                  <span className="flex-1">
+                    Thanks! Your brochure is ready —{' '}
+                    <a
+                      href="/strive-brochure.pdf"
+                      download
+                      className="underline hover:text-secondary"
+                    >
+                      download it here
+                    </a>
+                    .
+                  </span>
                 </motion.div>
               ) : (
                 <motion.form
