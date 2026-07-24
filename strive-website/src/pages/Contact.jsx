@@ -55,12 +55,10 @@ export default function Contact() {
               <a href="https://wa.me/919489949872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-primary hover:text-secondary">
                 <FaWhatsapp />
               </a>
-              {/* TODO: replace with real profile URL */}
-              <a href="#" aria-label="Facebook" className="text-primary hover:text-secondary">
+              <a href="https://www.facebook.com/share/163kBdRoWQ8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-primary hover:text-secondary">
                 <FaFacebookF />
               </a>
-              {/* TODO: replace with real profile URL */}
-              <a href="#" aria-label="Instagram" className="text-primary hover:text-secondary">
+              <a href="https://www.instagram.com/strivekochi?igsh=MXRja29mZ3oyajdjZA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-primary hover:text-secondary">
                 <FaInstagram />
               </a>
               {/* TODO: replace with real profile URL */}

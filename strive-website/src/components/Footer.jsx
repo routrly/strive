@@ -44,12 +44,10 @@ export default function Footer() {
             <a href="https://wa.me/919489949872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-accent">
               <FaWhatsapp />
             </a>
-            {/* TODO: replace with real profile URL */}
-            <a href="#" aria-label="Facebook" className="hover:text-accent">
+            <a href="https://www.facebook.com/share/163kBdRoWQ8/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent">
               <FaFacebookF />
             </a>
-            {/* TODO: replace with real profile URL */}
-            <a href="#" aria-label="Instagram" className="hover:text-accent">
+            <a href="https://www.instagram.com/strivekochi?igsh=MXRja29mZ3oyajdjZA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent">
               <FaInstagram />
             </a>
             {/* TODO: replace with real profile URL */}
