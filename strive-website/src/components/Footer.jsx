@@ -38,10 +38,10 @@ export default function Footer() {
 
         <div>
           <h3 className="font-semibold mb-3">Contact</h3>
-          <p className="text-white/80 text-sm">Phone: +91 93477 34872</p>
-          <p className="text-white/80 text-sm mb-4">Email: strivekochi@gmail.com</p>
+          <p className="text-white/80 text-sm">Phone: +91 94899 49872</p>
+          <p className="text-white/80 text-sm mb-4">Email: info@strivesociety.in</p>
           <div className="flex gap-4 text-xl">
-            <a href="https://wa.me/919347734872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-accent">
+            <a href="https://wa.me/919489949872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-accent">
               <FaWhatsapp />
             </a>
             {/* TODO: replace with real profile URL */}

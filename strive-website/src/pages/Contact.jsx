@@ -34,7 +34,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact Us"
-        description="Get in touch with STRIVE — call +91 93477 34872 or email strivekochi@gmail.com."
+        description="Get in touch with STRIVE — call +91 94899 49872 or email info@strivesociety.in."
         path="/contact"
       />
       <section className="pt-32 pb-20 px-6">
@@ -43,16 +43,16 @@ export default function Contact() {
             <SectionHeading align="left" eyebrow="Get in Touch" title="Contact Us" />
 
             <div className="space-y-4 mb-8">
-              <a href="tel:+919347734872" className="flex items-center gap-3 text-text hover:text-primary">
-                <FiPhone className="text-xl text-primary" /> +91 93477 34872
+              <a href="tel:+919489949872" className="flex items-center gap-3 text-text hover:text-primary">
+                <FiPhone className="text-xl text-primary" /> +91 94899 49872
               </a>
-              <a href="mailto:strivekochi@gmail.com" className="flex items-center gap-3 text-text hover:text-primary">
-                <FiMail className="text-xl text-primary" /> strivekochi@gmail.com
+              <a href="mailto:info@strivesociety.in" className="flex items-center gap-3 text-text hover:text-primary">
+                <FiMail className="text-xl text-primary" /> info@strivesociety.in
               </a>
             </div>
 
             <div className="flex gap-4 text-xl mb-8">
-              <a href="https://wa.me/919347734872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-primary hover:text-secondary">
+              <a href="https://wa.me/919489949872" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-primary hover:text-secondary">
                 <FaWhatsapp />
               </a>
               {/* TODO: replace with real profile URL */}
