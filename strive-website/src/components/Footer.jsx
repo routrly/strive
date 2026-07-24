@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import logo from '../assets/logo.png'
 
 const QUICK_LINKS = [
   { label: 'About', to: '/#about' },
@@ -16,7 +17,9 @@ export default function Footer() {
     <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3">
         <div>
-          <div className="text-2xl font-extrabold mb-3">STRIVE</div>
+          <div className="bg-white/95 rounded-xl inline-block p-2 mb-3">
+            <img src={logo} alt="STRIVE" className="h-16 w-auto" />
+          </div>
           <p className="text-white/80 text-sm max-w-xs">
             Society for Training Resources and Instructional Value Enhancement.
             Building trusted trainers, creating real opportunities.

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
 import useScrollPosition from '../hooks/useScrollPosition'
 import MobileMenu from './MobileMenu'
+import logo from '../assets/logo.png'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -24,8 +25,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <NavLink to="/" className={`text-2xl font-extrabold tracking-tight ${solid ? 'text-primary' : 'text-white'}`}>
-            STRIVE
+          <NavLink to="/" className="flex items-center">
+            <img src={logo} alt="STRIVE" className="h-12 md:h-14 w-auto" />
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-8">
