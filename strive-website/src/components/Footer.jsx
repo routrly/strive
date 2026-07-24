@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3">
         <div>
           <div className="bg-white/95 rounded-xl inline-block p-2 mb-3">
-            <img src={logo} alt="STRIVE" className="h-16 w-auto" />
+            <img src={logo} alt="STRIVE" className="h-20 w-auto" />
           </div>
           <p className="text-white/80 text-sm max-w-xs">
             Society for Training Resources and Instructional Value Enhancement.
