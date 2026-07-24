@@ -18,6 +18,11 @@ const TRACKS = [
     description: 'Apply to become a Verbal Skills Trainer in the STRIVE professional network.',
     formUrl: 'https://docs.google.com/forms/d/1VlT32DSLPTG-Rqd7YcRdXYAkbRtkJ_isOxIZTu58nng/viewform',
   },
+  {
+    title: 'Technical Trainer',
+    description: 'Apply to become a certified Technical Trainer under STRIVE.',
+    formUrl: 'https://forms.gle/oGFWjgkmgUwrDDEB6',
+  },
 ]
 
 export default function Membership() {
@@ -25,7 +30,7 @@ export default function Membership() {
     <>
       <Seo
         title="Membership — Apply as a Trainer"
-        description="Apply to become a certified Soft Skills, Aptitude Skills, or Verbal Skills Trainer in the STRIVE professional network."
+        description="Apply to become a certified Soft Skills, Aptitude Skills, Verbal Skills, or Technical Trainer in the STRIVE professional network."
         path="/membership"
       />
       <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-primary/10 to-transparent min-h-screen">
@@ -35,7 +40,7 @@ export default function Membership() {
             title="Choose Your Training Track"
             subtitle="Select the trainer category that matches your expertise and apply directly."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {TRACKS.map((track) => (
               <MembershipCard key={track.title} {...track} />
             ))}
