@@ -5,7 +5,7 @@ import SectionHeading from '../components/SectionHeading'
 import Button from '../components/Button'
 import AnimatedSection from '../components/AnimatedSection'
 import { isValidEmail } from '../utils/validation'
-import brochureCoverDemo from '../assets/demo/brochure-cover.jpg'
+import brochureCover from '../assets/brochure-cover.jpg'
 
 export default function Brochure() {
   const [email, setEmail] = useState('')
@@ -28,9 +28,8 @@ export default function Brochure() {
   return (
     <section id="brochure" className="py-20 px-6">
       <AnimatedSection as="div" className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Demo image — swap for the real brochure cover per src/assets/placeholder-manifest.md */}
         <img
-          src={brochureCoverDemo}
+          src={brochureCover}
           alt="STRIVE brochure cover"
           loading="lazy"
           className="rounded-card max-w-xs mx-auto w-full aspect-[4/5] object-cover"

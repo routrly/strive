@@ -1,15 +1,21 @@
 import { FiChevronDown } from 'react-icons/fi'
 import Button from '../components/Button'
 import AnimatedSection from '../components/AnimatedSection'
-import heroDemo from '../assets/demo/hero.jpg'
+import heroVideo from '../assets/hero.mp4'
 
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center">
       <div className="absolute inset-0">
-        {/* Demo image — swap for the real hero video per src/assets/placeholder-manifest.md */}
-        <img src={heroDemo} alt="" className="w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-primary/70" />
+        <video
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/30" />
       </div>
 
       <AnimatedSection as="div" className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
