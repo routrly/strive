@@ -1,36 +1,45 @@
+import { lazy, Suspense } from 'react'
 import Seo from '../components/Seo'
+import StructuredData from '../components/StructuredData'
 import Hero from '../sections/Hero'
-import TrustMetrics from '../sections/TrustMetrics'
+import AudiencePathways from '../sections/AudiencePathways'
 import About from '../sections/About'
 import WhyChooseStrive from '../sections/WhyChooseStrive'
 import WhatWeDo from '../sections/WhatWeDo'
-import OurApproach from '../sections/OurApproach'
+import TrainingGallery from '../sections/TrainingGallery'
 import MembershipBenefits from '../sections/MembershipBenefits'
 import MembershipProcess from '../sections/MembershipProcess'
 import BusinessGrowth from '../sections/BusinessGrowth'
-import Testimonials from '../sections/Testimonials'
 import Brochure from '../sections/Brochure'
+import Faq from '../sections/Faq'
 import FinalCTA from '../sections/FinalCTA'
+
+const Testimonials = lazy(() => import('../sections/Testimonials'))
 
 export default function Home() {
   return (
     <>
       <Seo
-        title="Building Trusted Trainers, Creating Real Opportunities"
-        description="STRIVE empowers trainers through verified opportunities, professional development, and a trusted training ecosystem connecting educators with institutions and organizations."
+        title="Empowering Trainers. Transforming Education."
+        description="A professional educator network connecting certified trainers with colleges, schools, corporate organizations, and CSR initiatives across India."
         path="/"
       />
+      <StructuredData />
+
       <Hero />
-      <TrustMetrics />
+      <AudiencePathways />
       <About />
       <WhyChooseStrive />
       <WhatWeDo />
-      <OurApproach />
+      <TrainingGallery />
       <MembershipBenefits />
       <MembershipProcess />
       <BusinessGrowth />
-      <Testimonials />
+      <Suspense fallback={null}>
+        <Testimonials />
+      </Suspense>
       <Brochure />
+      <Faq />
       <FinalCTA />
     </>
   )

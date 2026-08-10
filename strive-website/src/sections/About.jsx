@@ -1,49 +1,69 @@
+import { FiTarget, FiEye, FiUsers } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
 import AnimatedSection from '../components/AnimatedSection'
-import aboutDemo from '../assets/demo/about.jpg'
+import Picture from '../components/Picture'
+import aboutRealImg from '../assets/testimonials/session-1.jpg'
+import aboutRealImgWebp from '../assets/testimonials/session-1.webp'
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-24 px-6 sm:px-8 bg-slate-50 border-t border-slate-200/60">
       <AnimatedSection as="div" className="max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="About STRIVE"
-          title="Building Trusted Trainers. Creating Real Opportunities."
+          title="Bringing Structure and Trust to Training"
+          subtitle="Society for Training Resources and Instructional Value Enhancement — Founded to connect skilled trainers with genuine institutional opportunities."
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Demo image — swap for a real team/office photo per src/assets/placeholder-manifest.md */}
-          <img
-            src={aboutDemo}
-            alt="STRIVE team and office"
-            loading="lazy"
-            className="rounded-card w-full aspect-[4/3] object-cover"
-          />
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-200/90 bg-white group">
+              <Picture
+                src={aboutRealImg}
+                webpSrc={aboutRealImgWebp}
+                alt="STRIVE training session in progress"
+                className="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+              />
+            </div>
+          </div>
 
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-semibold text-primary mb-1">Who We Are</h3>
-              <p className="text-text/80">
-                STRIVE (Society for Training Resources and Instructional Value Enhancement) is a
-                growing community of trainers, educators, and professionals committed to delivering
-                high-quality learning experiences. We were founded with a simple mission: To bring
-                structure, trust, and real opportunities into the training ecosystem.
+          <div className="lg:col-span-7 space-y-6">
+            <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex items-center gap-3.5 mb-2.5">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg shrink-0">
+                  <FiUsers />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Who We Are</h3>
+              </div>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                STRIVE is an active community of trainers, educators, and industry professionals. We solve a core problem in freelance training: unverified middleman vendors, delayed payments, and lack of ongoing skill development.
               </p>
             </div>
-            <div>
-              <h3 className="font-semibold text-primary mb-1">Mission</h3>
-              <p className="text-text/80">
-                To empower trainers by providing a trusted platform that ensures genuine
-                opportunities, continuous skill development, professional credibility, and
-                long-term growth.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-primary mb-1">Vision</h3>
-              <p className="text-text/80">
-                To become the leading training network that sets the benchmark for quality,
-                trust, and impact in the training industry.
-              </p>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg shrink-0">
+                    <FiTarget />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">Mission</h3>
+                </div>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  To provide trainers with verified contracts, continuous training workshops (TOT), and reliable institutional matching.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg shrink-0">
+                    <FiEye />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">Vision</h3>
+                </div>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  To build a transparent, respected nationwide network where quality education and fair trainer compensation go hand-in-hand.
+                </p>
+              </div>
             </div>
           </div>
         </div>

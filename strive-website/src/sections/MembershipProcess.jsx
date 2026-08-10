@@ -1,30 +1,41 @@
 import SectionHeading from '../components/SectionHeading'
 import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
 
-const STEPS = ['Fill Profile', 'Application Review', 'Verification', 'Join STRIVE', 'Receive Opportunities']
+const STEPS = [
+  { step: '1', title: 'Submit Profile', desc: 'Fill out your trainer category & training background.' },
+  { step: '2', title: 'Review', desc: 'Our team evaluates your domain experience & credentials.' },
+  { step: '3', title: 'Verification', desc: 'Brief interaction and background check.' },
+  { step: '4', title: 'Onboarding', desc: 'Official entry into the STRIVE trainer network.' },
+  { step: '5', title: 'Assignments', desc: 'Receive verified training opportunities.' },
+]
 
 export default function MembershipProcess() {
   return (
-    <section className="py-20 px-6 bg-surface">
+    <section className="py-20 px-6 bg-white border-t border-slate-200/60">
       <AnimatedSection as="div" staggerChildren className="max-w-6xl mx-auto">
-        <SectionHeading eyebrow="How It Works" title="Membership Process" />
-        <ol className="flex flex-col md:flex-row items-stretch md:items-start gap-6 md:gap-4">
-          {STEPS.map((step, index) => (
+        <SectionHeading
+          eyebrow="Onboarding"
+          title="How to Join STRIVE"
+          subtitle="A straightforward process to maintain trainer standards and fair matching."
+        />
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {STEPS.map((item) => (
             <AnimatedItem
-              key={step}
-              as="li"
-              className="flex-1 flex md:flex-col items-center gap-4 text-center"
+              key={item.title}
+              as="div"
+              className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col items-start gap-3"
             >
-              <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shrink-0">
-                {index + 1}
+              <div className="w-9 h-9 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">
+                {item.step}
               </div>
-              <span className="font-medium text-text">{step}</span>
-              {index < STEPS.length - 1 && (
-                <span className="hidden md:block w-full border-t-2 border-dashed border-primary/30 mt-[-1.25rem]" aria-hidden="true" />
-              )}
+              <h3 className="font-bold text-slate-900 text-base">
+                {item.title}
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
             </AnimatedItem>
           ))}
-        </ol>
+        </div>
       </AnimatedSection>
     </section>
   )

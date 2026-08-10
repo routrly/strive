@@ -1,48 +1,69 @@
-import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight, FiCheckCircle, FiShield, FiTrendingUp, FiRepeat } from 'react-icons/fi'
 import SectionHeading from '../components/SectionHeading'
-import Card from '../components/Card'
 import AnimatedSection, { AnimatedItem } from '../components/AnimatedSection'
-import businessGrowthDemo from '../assets/demo/business-growth.jpg'
+import Picture from '../components/Picture'
+import businessGrowthRealImg from '../assets/testimonials/session-5.jpg'
+import businessGrowthRealImgWebp from '../assets/testimonials/session-5.webp'
 
 const CARDS = [
-  { title: 'Verified Clients', description: 'Institutions and organizations are verified before engagement.' },
-  { title: 'End-to-End Program Management', description: 'STRIVE manages the full training program lifecycle.' },
-  { title: 'Long-Term Partnerships', description: 'Building lasting relationships, not one-off engagements.' },
-  { title: 'Quality Delivery', description: 'Consistent, high-quality training outcomes.' },
+  { icon: FiShield, title: 'Vetted Client Partners', description: 'Institutions and companies are screened prior to trainer assignment.' },
+  { icon: FiRepeat, title: 'Program Management', description: 'STRIVE handles module coordination, schedules, and feedback collection.' },
+  { icon: FiTrendingUp, title: 'Long-Term Relationships', description: 'Building multi-semester partnerships for consistent academic impact.' },
+  { icon: FiCheckCircle, title: 'Quality Benchmark', description: 'Structured evaluations ensure high training standards across sessions.' },
 ]
 
 export default function BusinessGrowth() {
   return (
-    <section id="business-growth" className="py-20 px-6">
+    <section id="business-growth" className="py-20 px-6 bg-slate-50 border-t border-slate-200/60">
       <AnimatedSection as="div" staggerChildren className="max-w-6xl mx-auto">
-        <SectionHeading eyebrow="For Institutions" title="Business Growth" />
+        <SectionHeading
+          eyebrow="For Institutions & Corporates"
+          title="Reliable Trainer Deployment & Management"
+          subtitle="Connecting colleges and companies with vetted, professional educators."
+        />
 
-        <div className="flex items-center justify-center gap-4 md:gap-8 mb-14 flex-wrap">
-          {['Institution', 'STRIVE', 'Trainer'].map((node, index) => (
-            <AnimatedItem key={node} as="div" className="flex items-center gap-4 md:gap-8">
-              <div className="bg-primary text-white font-semibold px-6 py-4 rounded-card text-center min-w-[140px]">
-                {node}
+        <div className="flex items-center justify-center gap-3 sm:gap-6 mb-12 flex-wrap">
+          {[
+            { label: 'Colleges & Companies', desc: 'Require Vetted Trainers' },
+            { label: 'STRIVE Platform', desc: 'Coordinates & Verifies' },
+            { label: 'Certified Trainers', desc: 'Delivers Quality Modules' },
+          ].map((node, index) => (
+            <AnimatedItem key={node.label} as="div" className="flex items-center gap-3 sm:gap-4">
+              <div className="bg-green-950 text-white p-4 rounded-xl text-center max-w-[200px] border border-green-900/60 shadow-sm">
+                <span className="block font-bold text-sm">{node.label}</span>
+                <span className="block text-[11px] text-slate-300 mt-0.5">{node.desc}</span>
               </div>
-              {index < 2 && <FiArrowRight className="text-2xl text-primary shrink-0" aria-hidden="true" />}
+              {index < 2 && (
+                <FiArrowRight className="text-slate-400 text-lg shrink-0" aria-hidden="true" />
+              )}
             </AnimatedItem>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Demo image — swap for a real institution/corporate training photo per src/assets/placeholder-manifest.md */}
-          <img
-            src={businessGrowthDemo}
-            alt="Institution and corporate training session"
-            loading="lazy"
-            className="rounded-card w-full aspect-[4/3] object-cover"
-          />
-          <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+              <Picture
+                src={businessGrowthRealImg}
+                webpSrc={businessGrowthRealImgWebp}
+                alt="Institutional training session"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
             {CARDS.map((card) => (
               <AnimatedItem key={card.title} as="div">
-                <Card>
-                  <h3 className="font-semibold text-text mb-2">{card.title}</h3>
-                  <p className="text-text/70 text-sm">{card.description}</p>
-                </Card>
+                <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm h-full flex flex-col justify-between group">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
+                      <card.icon />
+                    </div>
+                    <h3 className="font-bold text-slate-900 text-base mb-1.5 group-hover:text-primary transition-colors">{card.title}</h3>
+                    <p className="text-slate-600 text-xs leading-relaxed">{card.description}</p>
+                  </div>
+                </div>
               </AnimatedItem>
             ))}
           </div>
