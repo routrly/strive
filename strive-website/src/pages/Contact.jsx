@@ -62,6 +62,7 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-8">
             <div>
               <SectionHeading
+                as="h1"
                 align="left"
                 eyebrow="Get in Touch"
                 title="Let's Connect"

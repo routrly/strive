@@ -33,16 +33,17 @@ export default function Membership() {
   return (
     <>
       <Seo
-        title="Membership — Apply as a Trainer"
-        description="Apply to join STRIVE as a Soft Skills, Aptitude, Verbal, or Technical Trainer."
+        title="Membership — Apply as a Certified Trainer"
+        description="Apply to join STRIVE's trainer network as a Soft Skills, Aptitude & Logic, Verbal Communication, or Technical Trainer. Certified trainers get matched with colleges, schools, and corporates across India."
         path="/membership"
       />
       <section className="pt-32 pb-20 px-6 bg-slate-50 min-h-screen border-t border-slate-200/60">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
+            as="h1"
             eyebrow="Trainer Onboarding"
             title="Choose Your Training Domain"
-            subtitle="Select your area of expertise below and complete the application form to join STRIVE."
+            subtitle="Select your area of expertise below and complete the application form to join STRIVE's certified trainer network."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {TRACKS.map((track) => (

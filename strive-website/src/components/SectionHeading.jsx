@@ -1,4 +1,4 @@
-export default function SectionHeading({ eyebrow, title, subtitle, align = 'center', light = false }) {
+export default function SectionHeading({ eyebrow, title, subtitle, align = 'center', light = false, as: Heading = 'h2' }) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
   return (
     <div className={`max-w-3xl mb-12 sm:mb-14 ${alignClass}`}>
@@ -7,13 +7,13 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = 'cent
           {eyebrow}
         </span>
       )}
-      <h2
+      <Heading
         className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-3.5 ${
           light ? 'text-white' : 'text-slate-900'
         }`}
       >
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p className={`text-base sm:text-lg font-normal leading-relaxed max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${light ? 'text-slate-300' : 'text-slate-600'}`}>
           {subtitle}
